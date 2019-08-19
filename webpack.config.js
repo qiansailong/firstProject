@@ -23,6 +23,16 @@ module.exports = {
         // css-loader 将css模块转化为css代码
         // 注意：loader的加载方式是由后往前
         use: ['style-loader','css-loader']
+      },
+      // 处理less相关文件
+      {
+        test: /\.less$/,
+        use: ['style-loader','css-loader','less-loader']
+      },
+      // 处理图片相关文件
+      {
+        test: /\.(png|jpg|gif|jpeg)$/,
+        use: ['file-loader']
       }
     ]
   }
